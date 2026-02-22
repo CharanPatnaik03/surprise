@@ -463,7 +463,7 @@
                             <div class="playlist-item-title">That Summer Night</div>
                             <div class="playlist-item-artist">The Adventure Band</div>
                         </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
+                        <button class="playlist-item-play" id="hoyna-btn"><i class="fas fa-play" id="hoyna-btn-icon"></i></button>
                     </div>
                     <div class="playlist-item">
                         <img src="6.jpg" alt="Song cover">
@@ -471,7 +471,7 @@
                             <div class="playlist-item-title">Inside Joke Anthem</div>
                             <div class="playlist-item-artist">Laugh Out Loud</div>
                         </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
+                        <button class="playlist-item-play"id="photograph-btn"><i class="fas fa-play" id="photograph-btn-icon"></i></button>
                     </div>
                     <div class="playlist-item">
                         <img src="2.jpeg" alt="Song cover">
@@ -479,7 +479,7 @@
                             <div class="playlist-item-title">Remember When</div>
                             <div class="playlist-item-artist">The Friendship Vibes</div>
                         </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
+                        <button class="playlist-item-play" id="phir-le-btn"><i class="fas fa-play" id="phir-le-btn-icon"></i></button>
                     </div>
                     <div class="playlist-item">
                         <img src="5.jpg" alt="Song cover">
@@ -487,7 +487,7 @@
                             <div class="playlist-item-title">Birthday Wishes</div>
                             <div class="playlist-item-artist">Happy Songs</div>
                         </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i></button>
+                        <button class="playlist-item-play" id="om-namaha-btn"><i class="fas fa-play"id="om-namaha-btn-icon"></i></button>
                     </div>
                 </div>
                 <div style="margin-top: 20px;">
@@ -515,6 +515,18 @@
      <!-- Surprise Audio Elements -->
     <audio id="arerey-manasa-audio" loop="">
         <source src="Arerey Manasa.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hoyna-audio" loop="">
+        <source src="Hoyna Hoyna.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="om-namaha-audio" loop="">
+        <source src="Om Namaha.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="phir-le-audio" loop="">
+        <source src="Phir Le Aya Dil.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="photograph-audio" loop="">
+        <source src="Photograph.mp3" type="audio/mpeg">
     </audio>
    
 
@@ -563,7 +575,7 @@
             // Cursor effect
             document.addEventListener('mousemove', createCursorEffect);
 
-             // Surprise button functionality
+             // Arerey Manasa button functionality
             const arereyManasaButton = document.getElementById('arerey-manasa-btn');
             const arereyManasaAudio = document.getElementById('arerey-manasa-audio');
             const arereyManasaButtonIcon = document.getElementById('arerey-manasa-btn-icon');
@@ -580,6 +592,82 @@
                     arereyManasaButtonIcon.classList.add('fa-pause');
                 }
                 arereyManasaPlaying = !arereyManasaPlaying;
+            });
+
+             // Hoyna Hoyna button functionality
+            const hoynaButton = document.getElementById('hoyna-btn');
+            const hoynaAudio = document.getElementById('hoyna-audio');
+            const hoynaButtonIcon = document.getElementById('hoyna-btn-icon');
+            let hoynaPlaying = false
+
+            hoynaButton.addEventListener('click', function() {
+                if (hoynaPlaying) {
+                    hoynaAudio.pause();
+                    hoynaButtonIcon.classList.remove('fa-pause');
+                    hoynaButtonIcon.classList.add('fa-play');
+                } else {
+                    hoynaAudio.play().catch(e => console.log('Audio play error:', e));
+                    hoynaButtonIcon.classList.remove('fa-play');
+                    hoynaButtonIcon.classList.add('fa-pause');
+                }
+                hoynaPlaying = !hoynaPlaying;
+            });
+
+             // Photograph button functionality
+            const photographButton = document.getElementById('photograph-btn');
+            const photographAudio = document.getElementById('photograph-audio');
+            const photographButtonIcon = document.getElementById('photograph-btn-icon');
+            let photographPlaying = false
+
+            photographButton.addEventListener('click', function() {
+                if (photographPlaying) {
+                    photographAudio.pause();
+                    photographButtonIcon.classList.remove('fa-pause');
+                    photographButtonIcon.classList.add('fa-play');
+                } else {
+                    photographAudio.play().catch(e => console.log('Audio play error:', e));
+                    photographButtonIcon.classList.remove('fa-play');
+                    photographButtonIcon.classList.add('fa-pause');
+                }
+                photographPlaying = !photographPlaying;
+            });
+
+             // Phir Le button functionality
+            const phirLeButton = document.getElementById('phir-le-btn');
+            const phirLeAudio = document.getElementById('phir-le-audio');
+            const phirLeButtonIcon = document.getElementById('phir-le-btn-icon');
+            let phirLePlaying = false
+
+            phirLeButton.addEventListener('click', function() {
+                if (phirLePlaying) {
+                    phirLeAudio.pause();
+                    phirLeButtonIcon.classList.remove('fa-pause');
+                    phirLeButtonIcon.classList.add('fa-play');
+                } else {
+                    phirLeAudio.play().catch(e => console.log('Audio play error:', e));
+                    phirLeButtonIcon.classList.remove('fa-play');
+                    phirLeButtonIcon.classList.add('fa-pause');
+                }
+                phirLePlaying = !phirLePlaying;
+            });
+
+             // Om Namaha button functionality
+            const omNamahaButton = document.getElementById('om-namaha-btn');
+            const omNamahaAudio = document.getElementById('om-namaha-audio');
+            const omNamahaButtonIcon = document.getElementById('om-namaha-btn-icon');
+            let omNamahaPlaying = false
+
+            omNamahaButton.addEventListener('click', function() {
+                if (omNamahaPlaying) {
+                    omNamahaAudio.pause();
+                    omNamahaButtonIcon.classList.remove('fa-pause');
+                    omNamahaButtonIcon.classList.add('fa-play');
+                } else {
+                    omNamahaAudio.play().catch(e => console.log('Audio play error:', e));
+                    omNamahaButtonIcon.classList.remove('fa-play');
+                    omNamahaButtonIcon.classList.add('fa-pause');
+                }
+                omNamahaPlaying = !omNamahaPlaying;
             });
 
             // Surprise button functionality
