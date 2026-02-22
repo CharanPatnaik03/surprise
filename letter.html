@@ -572,12 +572,12 @@
             arereyManasaButton.addEventListener('click', function() {
                 if (arereyManasaPlaying) {
                     arereyManasaAudio.pause();
-                    arereyManasaButtonIcon.classList.remove('fas fa-pause');
-                    arereyManasaButtonIcon.classList.add('fas fa-play');
+                    arereyManasaButtonIcon.classList.remove('fa-pause');
+                    arereyManasaButtonIcon.classList.add('fa-play');
                 } else {
                     arereyManasaAudio.play().catch(e => console.log('Audio play error:', e));
-                    arereyManasaButtonIcon.classList.remove('fas fa-play');
-                    arereyManasaButtonIcon.classList.add('fas fa-pause');
+                    arereyManasaButtonIcon.classList.remove('fa-play');
+                    arereyManasaButtonIcon.classList.add('fa-pause');
                 }
                 arereyManasaPlaying = !arereyManasaPlaying;
             });
