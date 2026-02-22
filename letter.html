@@ -455,7 +455,7 @@
                             <div class="playlist-item-title">Our Favorite Memory</div>
                             <div class="playlist-item-artist">That Artist You Love</div>
                         </div>
-                        <button class="playlist-item-play" id="arerey-manasa-btn"><i class="fas fa-play"></i></button>
+                        <button class="playlist-item-play" id="arerey-manasa-btn"><i class="fas fa-play" id="arerey-manasa-btn-icon"></i></button>
                     </div>
                     <div class="playlist-item">
                         <img src="1.jpg" alt="Song cover">
@@ -566,13 +566,18 @@
              // Surprise button functionality
             const arereyManasaButton = document.getElementById('arerey-manasa-btn');
             const arereyManasaAudio = document.getElementById('arerey-manasa-audio');
+            const arereyManasaButtonIcon = document.getElementById('arerey-manasa-btn-icon');
             let arereyManasaPlaying = false
 
             arereyManasaButton.addEventListener('click', function() {
                 if (arereyManasaPlaying) {
-                    arereyManasaAudio.pause();    
+                    arereyManasaAudio.pause();
+                    arereyManasaButtonIcon.classList.remove('fas fa-pause');
+                    arereyManasaButtonIcon.classList.add('fas fa-play');
                 } else {
                     arereyManasaAudio.play().catch(e => console.log('Audio play error:', e));
+                    arereyManasaButtonIcon.classList.remove('fas fa-play');
+                    arereyManasaButtonIcon.classList.add('fas fa-pause');
                 }
                 arereyManasaPlaying = !arereyManasaPlaying;
             });
