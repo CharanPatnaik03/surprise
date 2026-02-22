@@ -455,11 +455,7 @@
                             <div class="playlist-item-title">Our Favorite Memory</div>
                             <div class="playlist-item-artist">That Artist You Love</div>
                         </div>
-                        <button class="playlist-item-play"><i class="fas fa-play"></i>
-                            <audio preload="auto">
-                                    <source src="Arerey Manasa.mp3" type="audio/mpeg">
-                            </audio>
-                        </button>
+                        <button class="playlist-item-play" id="aererey-manasa-btn"><i class="fas fa-play"></i></button>
                     </div>
                     <div class="playlist-item">
                         <img src="1.jpg" alt="Song cover">
@@ -510,11 +506,17 @@
 
     <!-- Audio Elements -->
     <audio id="click-sound" preload="auto">
-        <source src="Arerey Manasa.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_bb630cc098.mp3?filename=cute-notification-ringtone-1-173850.mp3" type="audio/mpeg">
     </audio>
     <audio id="background-music" loop>
         <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=relaxing-145038.mp3" type="audio/mpeg">
     </audio>
+
+     <!-- Surprise Audio Elements -->
+    <audio id="arerey-manasa-audio" loop="">
+        <source src="Arerey Manasa.mp3" type="audio/mpeg">
+    </audio>
+   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.5.1/confetti.browser.min.js"></script>
@@ -560,6 +562,20 @@
 
             // Cursor effect
             document.addEventListener('mousemove', createCursorEffect);
+
+             // Surprise button functionality
+            const arereyManasaButton = document.getElementById('aererey-manasa-btn');
+            const arereyManasaAudio = document.getElementById('aererey-manasa-audio');
+            let arereyManasaPlaying = false
+
+            arereyManasaButton.addEventListener('click', function() {
+                if (arereyManasaPlaying) {
+                    arereyManasaAudio.pause();    
+                } else {
+                    arereyManasaAudio.play().catch(e => console.log('Audio play error:', e));
+                }
+                arereyManasaPlaying = !arereyManasaPlaying;
+            });
 
             // Surprise button functionality
             const surpriseButton = document.getElementById('surprise-button');
